@@ -36,9 +36,7 @@ public class FlyweightFactory extends Actor
         ghostBoss = new ArrayList<Character>();
         boomBoss = new ArrayList<Character>();
         
-        mario = new Mario("marioP1.png");
         score = new Score();
-        shot = new Shot();
         startBtn = new StartBtn();
         
         for(int i = 0; i < numGreenAnt; i++)
@@ -64,11 +62,11 @@ public class FlyweightFactory extends Actor
     
     public Character getBoomBoss(int i){return boomBoss.get(i);}
     
-    public Character getMario(){return mario;}
+    public Character getMario(){return mario.getInstance();}
     
     public Score getScore(){return score;}
     
-    public Shot getShot(){return shot;}
+    public Shot getShot(){return shot.getInstance();}
     
     public StartBtn getStartBtn(){return startBtn;}
     

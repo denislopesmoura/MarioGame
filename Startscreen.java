@@ -9,17 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Startscreen extends World
 {
 
-    /**
-     * Constructor for objects of class Startscreen.
-     * 
-     */
+    
     FlyweightFactory factory = new FlyweightFactory();
     
     public Startscreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        addObject(factory.getStartBtn(),60,350);
+        addObject(factory.getStartBtn(),477,206);
         
     }
 }

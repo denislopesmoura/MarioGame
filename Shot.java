@@ -6,9 +6,9 @@
      * @author (your name) 
      * @version (a version number or a date)
      */
-    public class Shot extends Object
+    public final class Shot extends Object
     {
-      
+      private static final Shot INSTANCE = new Shot();
     
     public void act() 
     {
@@ -58,5 +58,7 @@
             myWorld.removeObject(this);
         }
         
-    }    
+    }  
+    
+    public static Shot getInstance(){return INSTANCE;}
 }

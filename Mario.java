@@ -6,19 +6,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mario extends Character
+public final class Mario extends Character
 {
-    protected int status = 1;
+    private int status = 1;
     ContinueBtn continueBtn;
     GameOver gameOverBtn;
     
-    Shot shot = new Shot();
-    // FlyweightFactory factory = new FlyweightFactory();
+    private static final Mario INSTANCE = new Mario();
     
-    public Mario(String url){
+    Shot shot = new Shot();
+    
+    public Mario(){
         
-        this.urlPhoto = url;
-        setImage(this.urlPhoto);
+        setImage("marioP1.png");
     
     }
     
@@ -28,6 +28,8 @@ public class Mario extends Character
         // Add your action code here.
         moveCharacter();
     }    
+    
+    public static Mario getInstance(){return INSTANCE;}
     
     public void moveCharacter(){
         if(status != 0) {
