@@ -8,13 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BoomBoss extends Character
 {
-    /**
-     * Act - do whatever the BoomBoss wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
+    public BoomBoss(String name, String url){
+        this.name = name;
+        this.urlPhoto = url;
+    }
+    
     public void act() 
     {
         // Add your action code here.
+        moveCharacter();
+        setImage();
     } 
     
     public void moveCharacter(){

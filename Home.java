@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Home extends World
 {
-    int count;
+    int idxGreenAnt;
+    int idxRedAnt;
+    int idxGhostBoss;
+    int idxBoomBoss;
     
     FlyweightFactory factory = new FlyweightFactory();
     
@@ -18,8 +21,13 @@ public class Home extends World
         super(600, 400, 1);
         
         //Inicializa variáveis
-        count = 0;
+        idxGreenAnt = 0;
+        idxRedAnt = 0;
+        idxGhostBoss = 0;
+        idxBoomBoss = 0;
         
+        addObject(factory.getMario(), 487, 192);
+        addObject(factory.getScore(), getWidth()/2, 15);
 
     }
     
@@ -29,24 +37,57 @@ public class Home extends World
     
     }
     
+    public Score getScore(){return factory.getScore();}
+    
     public void buildCharacter()
     {
-         if((Greenfoot.getRandomNumber(100) < 2))
-        {
-            buildGreenAnt();
-        }
+        if((Greenfoot.getRandomNumber(100) < 2)){buildGreenAnt();}
+        
+        if((Greenfoot.getRandomNumber(100) < 1)){buildRedAnt();}
+        
+        if((Greenfoot.getRandomNumber(100) == 45)){buildGhostBoss();}
+        
+        if((Greenfoot.getRandomNumber(100) == 35)){buildBoomBoss();}
+        
       
     }
     
     public void buildGreenAnt()
     {
-        if(count == 5){count = 0;}
+        if(idxGreenAnt == factory.numGreenAnt){idxGreenAnt = 0;}
         
-        //delayTime(500);
-        addObject(factory.getGreenAnt(count), 0, MygetRandomNumber(70,400));
-        count++;
+        addObject(factory.getGreenAnt(idxGreenAnt), 0, MygetRandomNumber(70,400));
+        idxGreenAnt++;
         
     }
+    
+    public void buildRedAnt()
+    {
+        if(idxRedAnt == factory.numRedAnt){idxRedAnt = 0;}
+
+        addObject(factory.getRedAnt(idxRedAnt), 0, MygetRandomNumber(70,400));
+        idxRedAnt++;
+        
+    }
+    
+    public void buildGhostBoss()
+    {
+        if(idxGhostBoss == factory.numGhostBoss){idxGhostBoss = 0;}
+        
+        addObject(factory.getGhostBoss(idxGhostBoss), 0, MygetRandomNumber(70,400));
+        idxGhostBoss++;
+        
+    }
+    
+    public void buildBoomBoss()
+    {
+        if(idxBoomBoss == factory.numBoomBoss){idxBoomBoss = 0;}
+        
+        addObject(factory.getBoomBoss(idxBoomBoss), 0, MygetRandomNumber(70,400));
+        idxBoomBoss++;
+        
+    }
+    
     
     public int MygetRandomNumber(int start,int end){
 
@@ -55,4 +96,5 @@ public class Home extends World
        
        //metodo para gerar numeros aleatorios entre valores
     }
+    
 }
