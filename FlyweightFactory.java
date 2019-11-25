@@ -62,7 +62,7 @@ public class FlyweightFactory extends Actor
     
     public Character getBoomBoss(int i){return boomBoss.get(i);}
     
-    public Character getMario(){return mario.getInstance();}
+    public Mario getMario(){return mario.getInstance();}
     
     public Score getScore(){return score;}
     

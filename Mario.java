@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public final class Mario extends Character
 {
-    private int status = 1;
+    int status = 1;
     ContinueBtn continueBtn;
     GameOver gameOverBtn;
     
@@ -30,6 +30,8 @@ public final class Mario extends Character
     }    
     
     public static Mario getInstance(){return INSTANCE;}
+    
+    public void setStatus(int num){this.status = num;}
     
     public void moveCharacter(){
         if(status != 0) {

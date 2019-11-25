@@ -26,6 +26,9 @@ public class Home extends World
         idxGhostBoss = 0;
         idxBoomBoss = 0;
         
+        factory.getMario().setStatus(1);
+        factory.getMario().setImage("marioP1.png");
+        
         addObject(factory.getMario(), 487, 192);
         addObject(factory.getScore(), getWidth()/2, 15);
 
